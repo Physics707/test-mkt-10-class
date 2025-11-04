@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import useAntiCheat from "./hooks/useAntiCheat";
 // === ВОПРОСЫ ===
 const testVariants = {
   1: [
