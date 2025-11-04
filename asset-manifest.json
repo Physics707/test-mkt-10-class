@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/test-mkt-10-class/static/css/main.f9a11fd5.css",
+    "main.js": "/test-mkt-10-class/static/js/main.7e01954a.js",
+    "static/js/453.950e08aa.chunk.js": "/test-mkt-10-class/static/js/453.950e08aa.chunk.js",
+    "index.html": "/test-mkt-10-class/index.html",
+    "main.f9a11fd5.css.map": "/test-mkt-10-class/static/css/main.f9a11fd5.css.map",
+    "main.7e01954a.js.map": "/test-mkt-10-class/static/js/main.7e01954a.js.map",
+    "453.950e08aa.chunk.js.map": "/test-mkt-10-class/static/js/453.950e08aa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9a11fd5.css",
+    "static/js/main.7e01954a.js"
+  ]
+}
