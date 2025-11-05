@@ -164,24 +164,26 @@ const App = () => {
 
   // === Античитинг ===
   useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        setIsTabFocused(false);
-        setBlurCount(prev => prev + 1);
-        if (blurCount >= 0) { // первое сворачивание — предупреждение, второе — завершение
-          blurTimerRef.current = setTimeout(() => {
-            if (blurCount >= 1) {
-              saveAttempt();
-              setScreen('result');
-              calculateScore();
-            }
-          }, 1000);
-        }
-      } else {
-        setIsTabFocused(true);
-        if (blurTimerRef.current) clearTimeout(blurTimerRef.current);
-      }
-    };
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      setIsTabFocused(false);
+      setBlurCount(prev => prev + 1);
+
+      // Завершаем тест сразу при первом сворачивании
+      saveAttempt();
+      calculateScore();
+      setScreen('result');
+    } else {
+      setIsTabFocused(true);
+    }
+  };
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  return () => {
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+  };
+}, []);
+
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => {
